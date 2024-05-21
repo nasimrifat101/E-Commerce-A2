@@ -14,18 +14,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = __importDefault(require("./app"));
-function main() {
+const config_1 = __importDefault(require("./app/config"));
+function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
-        const port = 3000;
         try {
-            yield mongoose_1.default.connect("mongodb+srv://<username>:<password>@cluster0.yuxyuxp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+            yield mongoose_1.default.connect(config_1.default.database_url);
+            console.log("Connected to MongoDB");
+            const port = config_1.default.port || 5000;
             app_1.default.listen(port, () => {
-                console.log(`Example app listening on port ${port}`);
+                console.log(`Server is running on port ${port}`);
             });
         }
-        catch (err) {
-            console.log(err);
+        catch (error) {
+            console.error("Error starting server:", error);
         }
     });
 }
-main();
+startServer();
