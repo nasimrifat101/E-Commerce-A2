@@ -2,6 +2,10 @@
 
 This project is an E-Commerce API built with Node.js, Express, MongoDB and Mongoose. It allows users to manage products and orders with CRUD operations and provides functionalities such as searching for products and filtering orders by user email.
 
+#### Production API endpoint for testing
+- https://assignment-2-nine-azure.vercel.app/api/products
+- https://assignment-2-nine-azure.vercel.app/api/orders
+
 ## Features
 
 - CRUD operations for products and orders
