@@ -102,6 +102,9 @@ This project is an E-Commerce API built with Node.js, Express, MongoDB and Mongo
 
 ### Orders
 
+- **NOTE**
+  - Need a valid id from product list for order to be placed.
+
 - **Get All Orders**
   - **URL:** `/api/orders`
   - **Method:** `GET`
